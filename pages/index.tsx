@@ -1,12 +1,14 @@
+import Head from "next/head";
+import Image from "next/image";
 import { Inter } from "next/font/google";
-import "@/styles/reset.scss";
+import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
-      <p>Home</p>
+      <p>아아아아아ㅏ</p>
     </>
   );
 }
