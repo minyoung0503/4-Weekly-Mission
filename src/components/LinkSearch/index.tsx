@@ -1,5 +1,5 @@
 import Image from "next/image";
-import searchIcon from "../../assets/Search.svg";
+import searchIcon from "@/src/assets/Search.svg";
 import css from "./LinkSearch.module.scss";
 
 function LinkSearch({ value, onChange, onReset, inputRef }: any) {

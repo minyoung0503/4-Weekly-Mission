@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { getUsersLink } from "@/src/apis/api";
 import Image from "next/image";
-import Cards from "../Cards";
-import shareIcon from "../../assets/share.svg";
-import penIcon from "../../assets/pen.svg";
-import deleteIcon from "../../assets/delete.svg";
-import addIcon from "../../assets/add.svg";
+import Cards from "@/src/components/Cards";
+import shareIcon from "@/src/assets/share.svg";
+import penIcon from "@/src/assets/pen.svg";
+import deleteIcon from "@/src/assets/delete.svg";
+import addIcon from "@/src/assets/add.svg";
 import css from "./FolderItem.module.scss";
 
 interface Props {

@@ -3,10 +3,10 @@ import { Button, Popover, OverlayTrigger } from "react-bootstrap";
 import Image from "next/image";
 import getTimeAgo from "@/src/utils/Urilities";
 import Modal from "@/src/components/Modal";
-import starIcon from "../../assets/star.svg";
-import checkedStarIcon from "../../assets/checkedstar.svg";
-import kebabIcon from "../../assets/kebab.svg";
-import noImage from "../../assets/noimage.jpeg";
+import starIcon from "@/src/assets/star.svg";
+import checkedStarIcon from "@/src/assets/checkedstar.svg";
+import kebabIcon from "@/src/assets/kebab.svg";
+import noImage from "@/src/assets/noimage.jpeg";
 import css from "./Cards.module.scss";
 
 interface Props {

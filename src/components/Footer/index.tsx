@@ -1,11 +1,11 @@
-import Image from "next/image";
-import facebookIcon from "../../assets/facebook.svg";
-import twitterIcon from "../../assets/twitter.svg";
-import youtubeIcon from "../../assets/youtube.svg";
-import instagramIcon from "../../assets/instagram.svg";
+import { Image } from "react-bootstrap";
+import facebookIcon from "@/src/assets/facebook.svg";
+import twitterIcon from "@/src/assets/twitter.svg";
+import youtubeIcon from "@/src/assets/youtube.svg";
+import instagramIcon from "@/src/assets/instagram.svg";
 import css from "./Footer.module.scss";
 
-function Footer() {
+export default function Footer() {
   const SNS_LIST = [
     {
       name: "Facebook",
@@ -46,5 +46,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;

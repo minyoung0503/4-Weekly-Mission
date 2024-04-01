@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import Image from "next/image";
 import { getSharedUser, getFolderUser } from "@/src/apis/api";
-import logo from "../../assets/logo.svg";
+import logo from "@/src/assets/logo.svg";
 import css from "./Gnb.module.scss";
 
-function Gnb() {
-  const location = useLocation();
+export default function Gnb() {
+  const router = useRouter();
   const [userData, setUserData] = useState({ email: "", img: "" });
   const [isUserDataLoaded, setIsUserDataLoaded] = useState(false);
 
-  const isSharedPage = location.pathname === "/shared";
+  const isSharedPage = router.pathname === "/shared";
 
   useEffect(() => {
     const getUserData = async () => {
@@ -30,12 +31,12 @@ function Gnb() {
       }
     };
     getUserData();
-  }, [location.pathname, isSharedPage]);
+  }, [router.pathname, isSharedPage]);
 
   return (
     <div className={isSharedPage ? css.isSharedPage : ""}>
       <div className={css.Gnb}>
-        <Link to="/">
+        <Link href={"/"}>
           <Image src={logo} alt="logo" />
         </Link>
         <div className={css.profileBox}>
@@ -56,5 +57,3 @@ function Gnb() {
     </div>
   );
 }
-
-export default Gnb;
