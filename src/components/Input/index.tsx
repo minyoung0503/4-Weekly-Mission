@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FocusEvent } from "react";
 import Image from "next/image";
-import eyeOn from "@/src/assets/eye-on.svg";
-import eyeOff from "@/src/assets/eye-off.svg";
+import eyeOn from "@/public/assets/eye-on.svg";
+import eyeOff from "@/public/assets/eye-off.svg";
 import css from "./Input.module.scss";
 
 interface InputProps {

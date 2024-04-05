@@ -3,6 +3,7 @@ import { getUsersFolder } from "@/src/apis/api";
 import AddLinkInput from "@/src/components/AddLinkInput";
 import LinkSearch from "@/src/components/LinkSearch";
 import FolderItem from "@/src/components/FolderItem";
+import Footer from "@/src/components/Footer";
 
 function FolderPage() {
   const [usersFolderData, setUsersFolderData] = useState([]);
@@ -29,8 +30,6 @@ function FolderPage() {
     }
   };
 
-  console.log(searchKeyword);
-
   return (
     <>
       <AddLinkInput />
@@ -46,6 +45,7 @@ function FolderPage() {
         usersFolderData={usersFolderData}
         searchKeyword={searchKeyword}
       />
+      <Footer />
     </>
   );
 }

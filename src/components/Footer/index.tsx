@@ -1,34 +1,8 @@
 import { Image } from "react-bootstrap";
-import facebookIcon from "@/src/assets/facebook.svg";
-import twitterIcon from "@/src/assets/twitter.svg";
-import youtubeIcon from "@/src/assets/youtube.svg";
-import instagramIcon from "@/src/assets/instagram.svg";
+import { SNS_LIST } from "@/src/constant/constant";
 import css from "./Footer.module.scss";
 
 export default function Footer() {
-  const SNS_LIST = [
-    {
-      name: "Facebook",
-      href: "https://www.facebook.com/",
-      src: facebookIcon,
-    },
-    {
-      name: "Twitter",
-      href: "https://www.twitter.com/",
-      src: twitterIcon,
-    },
-    {
-      name: "Youtube",
-      href: "https://www.youtube.com/",
-      src: youtubeIcon,
-    },
-    {
-      name: "Instagram",
-      href: "https://www.instagram.com/",
-      src: instagramIcon,
-    },
-  ];
-
   return (
     <div className={css.Footer}>
       <p className={css.copyright}>©codeit - 2023</p>

@@ -7,10 +7,10 @@ import logo from "@/src/assets/logo.svg";
 import css from "./Gnb.module.scss";
 
 export default function Gnb() {
-  const router = useRouter();
   const [userData, setUserData] = useState({ email: "", img: "" });
   const [isUserDataLoaded, setIsUserDataLoaded] = useState(false);
 
+  const router = useRouter();
   const isSharedPage = router.pathname === "/shared";
 
   useEffect(() => {
@@ -42,11 +42,9 @@ export default function Gnb() {
         <div className={css.profileBox}>
           {isUserDataLoaded ? (
             <>
-              <Image
-                className={css.profileImg}
-                src={userData.img}
-                alt="프로필 이미지"
-              />
+              <div className={css.profileImg}>
+                <Image src={userData.img} alt="프로필 이미지" />
+              </div>
               <p className={css.profileEmail}>{userData.email}</p>
             </>
           ) : (

@@ -5,7 +5,7 @@ import LinkSearch from "@/src/components/LinkSearch";
 import Cards from "@/src/components/Cards";
 
 function SharedPage() {
-  // Header
+  const [cardList, setCardList] = useState([]);
   const [folderData, setFolderData] = useState({
     folderName: "",
     profileName: "",
@@ -28,9 +28,6 @@ function SharedPage() {
 
     getFolderData();
   }, []);
-
-  // Cards
-  const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
     const getFolderData = async () => {

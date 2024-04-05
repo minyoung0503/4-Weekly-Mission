@@ -1,5 +1,5 @@
 import Image from "next/image";
-import searchIcon from "@/src/assets/Search.svg";
+import searchIcon from "@/public/assets/Search.svg";
 import css from "./LinkSearch.module.scss";
 
 function LinkSearch({ value, onChange, onReset, inputRef }: any) {
@@ -17,12 +17,14 @@ function LinkSearch({ value, onChange, onReset, inputRef }: any) {
           <Image src={searchIcon} alt="search" />
         </button>
         {value && (
-          <Image
-            className={css.delete}
-            src="https://weekly-mission-week9.vercel.app/images/close.svg"
-            alt="delete"
-            onClick={onReset}
-          />
+          <button className={css.delete} onClick={onReset}>
+            <Image
+              src="https://weekly-mission-week9.vercel.app/images/close.svg"
+              alt="delete"
+              width={24}
+              height={24}
+            />
+          </button>
         )}
       </div>
       {value && (

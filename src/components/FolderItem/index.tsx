@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { getUsersLink } from "@/src/apis/api";
 import Image from "next/image";
 import Cards from "@/src/components/Cards";
-import shareIcon from "@/src/assets/share.svg";
-import penIcon from "@/src/assets/pen.svg";
-import deleteIcon from "@/src/assets/delete.svg";
-import addIcon from "@/src/assets/add.svg";
+import shareIcon from "@/public/assets/share.svg";
+import penIcon from "@/public/assets/pen.svg";
+import deleteIcon from "@/public/assets/delete.svg";
+import addIcon from "@/public/assets/add.svg";
 import css from "./FolderItem.module.scss";
 
 interface Props {
@@ -58,25 +58,23 @@ function FolderItem({ usersFolderData, searchKeyword }: Props) {
           </div>
           <button className={css.addFolder}>
             <p>폴더 추가</p>
-            <Image src={addIcon} alt="폴더 추가" />
+            <Image src={addIcon} alt="폴더 추가" width={16} height={17} />
           </button>
         </div>
         <div className={css.optionBar}>
           <h1 className={css.folderTitle}>{selectedFolder.name}</h1>
-          {selectedFolder.name === "전체" ? (
-            ""
-          ) : (
+          {selectedFolder.name !== "전체" && (
             <div className={css.optionList}>
               <button className={css.option}>
-                <Image src={shareIcon} alt="공유" />
+                <Image src={shareIcon} alt="공유" width={18} height={19} />
                 <span>공유</span>
               </button>
               <button className={css.option}>
-                <Image src={penIcon} alt="이름 변경" />
+                <Image src={penIcon} alt="이름 변경" width={18} height={19} />
                 <span>이름 변경</span>
               </button>
               <button className={css.option}>
-                <Image src={deleteIcon} alt="삭제" />
+                <Image src={deleteIcon} alt="삭제" width={16} height={17} />
                 <span>삭제</span>
               </button>
             </div>

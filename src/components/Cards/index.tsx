@@ -3,10 +3,10 @@ import { Button, Popover, OverlayTrigger } from "react-bootstrap";
 import Image from "next/image";
 import getTimeAgo from "@/src/utils/Urilities";
 import Modal from "@/src/components/Modal";
-import starIcon from "@/src/assets/star.svg";
-import checkedStarIcon from "@/src/assets/checkedstar.svg";
-import kebabIcon from "@/src/assets/kebab.svg";
-import noImage from "@/src/assets/noimage.jpeg";
+import starIcon from "@/public/assets/star.svg";
+import checkedStarIcon from "@/public/assets/checkedstar.svg";
+import kebabIcon from "@/public/assets/kebab.svg";
+import noImage from "@/public/assets/noimage.jpeg";
 import css from "./Cards.module.scss";
 
 interface Props {
@@ -16,12 +16,12 @@ interface Props {
 }
 
 function Cards({ cardList, showStarKebab, searchKeyword }: Props) {
-  const isListEmpty = cardList.length === 0;
-
   const [popoverShow, setPopoverShow] = useState(false);
   const [starClick, setStarClick] = useState(false);
   const [deleteModalShow, setDeleteModalShow] = useState(false);
   const [selectedData, setSelectedData] = useState({ url: "" });
+
+  const isListEmpty = cardList.length === 0;
 
   if (isListEmpty) {
     return (
@@ -53,7 +53,10 @@ function Cards({ cardList, showStarKebab, searchKeyword }: Props) {
         )
       : cards;
 
-  const handleKebabClick = (e: any, data: any) => {
+  const handleKebabClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    data: any
+  ) => {
     e.preventDefault();
     setSelectedData(data);
     setPopoverShow(!popoverShow);
@@ -74,8 +77,6 @@ function Cards({ cardList, showStarKebab, searchKeyword }: Props) {
     }
   };
 
-  console.log(selectedData);
-
   return (
     <div className={css.Cards}>
       <div className={css.cardItemBox}>
@@ -87,11 +88,14 @@ function Cards({ cardList, showStarKebab, searchKeyword }: Props) {
             target="_blank"
           >
             <div className={css.imgBox}>
-              <Image
-                className={css.cardImg}
-                src={data.imageSource || noImage}
-                alt="링크 대표 이미지"
-              />
+              <div className={css.cardImg}>
+                <Image
+                  src={data.imageSource || noImage}
+                  alt="링크 대표 이미지"
+                  width={340}
+                  height={200}
+                />
+              </div>
               {showStarKebab && (
                 <button className={css.starBtn} onClick={handleStarClick}>
                   <Image
